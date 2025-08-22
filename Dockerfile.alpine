@@ -11,7 +11,7 @@ RUN set -eu; \
     apk add --no-cache --virtual .deps curl gcc musl-dev libffi-dev; \
     curl -sSL https://install.python-poetry.org \
         | python - --version "${POETRY_VERSION}"; \
-    poetry self add poetry-plugin-export; \
+    /root/.local/bin/poetry self add poetry-plugin-export; \
     rm -rf ~/.cache; \
     apk del --no-cache .deps;
 

@@ -15,7 +15,7 @@ RUN set -eu; \
     export POETRY_HOME=${POETRY_HOME}; \
     curl -sSL https://install.python-poetry.org \
         | python - --version "${POETRY_VERSION}"; \
-    poetry self add poetry-plugin-export; \
+    /usr/local/bin/poetry self add poetry-plugin-export; \
     rm -rf ~/.cache;
 
 # Create `poetry` user with UID/GID (1000 as default)

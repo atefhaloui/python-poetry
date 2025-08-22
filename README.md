@@ -2,9 +2,10 @@
 
 ## About
 
-The repository provides Python Docker images with `poetry` preinstalled. My motivation for this was to cut the time spend in CI installing `poetry`, but this will be useful for local development, too.
+The repository provides Python Docker images with `poetry` preinstalled. My motivation for this was to cut the time spend in CI installing `poetry` with the `poetry-plugin-export` preinstalled as this is a requirement for the [Security Automations for AWS WAF solution](https://github.com/aws-solutions/aws-waf-security-automations).
 
-[Docker Hub](https://hub.docker.com/r/acidrain/python-poetry/)
+
+[ghcr.io](https://ghcr.io/atefhaloui/python-poetry/)
 
 ## Supported tags
 
@@ -26,5 +27,6 @@ For python 3.8, you can still use poetry 1.8.3 with the following tags:
 
 ## Thanks
 
-Many thanks to [Etienne Napoleone](https://github.com/etienne-napoleone) who originally created this repository
-and to [Jon Atkinson](https://github.com/jonatkinson) who maintained it.
+Many thanks to
+* [Mathieu Lemay](https://github.com/mathieu-lemay/python-poetry) from who I forked the project
+* [Etienne Napoleone](https://github.com/etienne-napoleone) who originally created this repository and [Jon Atkinson](https://github.com/jonatkinson) who maintained it.

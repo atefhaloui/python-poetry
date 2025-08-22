@@ -27,4 +27,4 @@ RUN groupadd -g ${POETRY_GID} ${POETRY_USER} && \
 # Switch to poetry user
 USER ${POETRY_USER}
 
-ENV PATH=${POETRY_HOME}/bin:$PATH"
+ENV PATH="${POETRY_HOME}/bin:${PATH}"

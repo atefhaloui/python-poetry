@@ -20,7 +20,7 @@ build_options=(
 )
 
 for variant in "${variants[@]}"; do
-    tag="acidrain/python-poetry:${PYTHON_VERSION}${variant:+-${variant}}"
+    tag="ghcr.io/atefhaloui/python-poetry:${PYTHON_VERSION}${variant:+-${variant}}"
     dockerfile="Dockerfile${variant:+.${variant}}"
 
     docker buildx build "${build_options[@]}" -t "${tag}" -f "${dockerfile}" .
@@ -28,5 +28,5 @@ for variant in "${variants[@]}"; do
 done
 
 if [[ "${PYTHON_VERSION}" == "${LATEST}" ]]; then
-    docker buildx build "${build_options[@]}" -t "acidrain/python-poetry:latest" -f "Dockerfile" .
+    docker buildx build "${build_options[@]}" -t "ghcr.io/atefhaloui/python-poetry:latest" -f "Dockerfile" .
 fi

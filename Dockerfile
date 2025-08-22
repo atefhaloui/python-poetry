@@ -9,10 +9,12 @@ ARG POETRY_USER=poetry
 ARG POETRY_UID=1000
 ARG POETRY_GID=1000
 ENV POETRY_VERSION=${POETRY_VERSION}
+ENV POETRY_HOME=/usr/local/bin
 
 RUN set -eu; \
+    export POETRY_HOME=${POETRY_HOME}; \
     curl -sSL https://install.python-poetry.org \
-        | python - --install-path /usr/local/bin --version "${POETRY_VERSION}"; \
+        | python - --version "${POETRY_VERSION}"; \
     poetry self add poetry-plugin-export; \
     rm -rf ~/.cache;
 

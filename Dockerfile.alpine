@@ -21,8 +21,8 @@ RUN set -eu; \
     apk del --no-cache .deps;
 
 # Create `poetry` user with UID/GID (1000 as default)
-RUN groupadd -g ${POETRY_GID} ${POETRY_USER} && \
-    useradd -m -u ${POETRY_UID} -g ${POETRY_USER} ${POETRY_USER}
+RUN addgroup -g ${POETRY_GID} ${POETRY_USER} && \
+    adduser -u ${POETRY_UID} -G ${POETRY_USER} -g "" -D ${POETRY_USER}
 
 # Switch to poetry user
 USER ${POETRY_USER}
